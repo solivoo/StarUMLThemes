@@ -8,18 +8,13 @@
           "id": "tools.theme-dark",
           "submenu": [
             {
-              "label": "Aplicar perfil DDD/SOLID (estereotipos)",
+              "label": "1. Aplicar perfil DDD/SOLID (OBLIGATORIO)",
               "id": "tools.theme-dark.apply-profile",
               "command": "theme-dark:apply-profile"
             },
             { "type": "separator" },
             {
-              "label": "Aplicar preferencias dark (UI + canvas)",
-              "id": "tools.theme-dark.apply-prefs",
-              "command": "theme-dark:apply-prefs"
-            },
-            {
-              "label": "Recolorear diagrama actual (por estereotipo)",
+              "label": "2. Recolorear diagrama actual",
               "id": "tools.theme-dark.apply-diagram",
               "command": "theme-dark:apply-diagram"
             },
@@ -27,6 +22,27 @@
               "label": "Recolorear TODOS los diagramas",
               "id": "tools.theme-dark.apply-all",
               "command": "theme-dark:apply-all"
+            },
+            { "type": "separator" },
+            {
+              "label": "Aplicar preferencias dark (UI + canvas)",
+              "id": "tools.theme-dark.apply-prefs",
+              "command": "theme-dark:apply-prefs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "model",
+      "submenu": [
+        {
+          "id": "model.apply-profile",
+          "submenu": [
+            {
+              "label": "DDDSolidProfile (Theme Dark)",
+              "id": "model.apply-profile.ddd-solid",
+              "command": "theme-dark:apply-profile"
             }
           ]
         }

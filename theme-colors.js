@@ -1,11 +1,13 @@
 /**
  * Paleta total-dark para StarUML.
- * Cada estereotipo/tipo tiene un fill distinto, legible sobre fondo oscuro.
+ * Fills oscuros + texto/líneas claros = contraste legible.
  */
-const LINE = "#c8c8c8";
-const FONT = "#eaeaea";
-const CANVAS = "#141414";
-const DEFAULT_FILL = "#2b2b2b";
+const LINE = "#d8d8d8";
+const FONT = "#ffffff";
+const CANVAS = "#121212";
+const DEFAULT_FILL = "#2a2a2e";
+/** Color del grid del canvas (StarUML lo hardcodea en #E0E0E0; lo parcheamos) */
+const GRID = "#2a2a2a";
 
 const base = {
   "theme.default": "dark",
@@ -198,6 +200,7 @@ module.exports = {
   LINE,
   FONT,
   CANVAS,
+  GRID,
   DEFAULT_FILL,
   PREFIXES
 };

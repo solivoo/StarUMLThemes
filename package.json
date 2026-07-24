@@ -3,7 +3,7 @@
   "title": "Theme Dark StarUML",
   "description": "Tema total dark + perfil DDD/SOLID/POO para StarUML 6.3.1+",
   "homepage": "https://github.com/solivo/ThemeDarkStarUML",
-  "version": "1.2.0",
+  "version": "1.3.1",
   "keywords": [
     "staruml",
     "theme",
@@ -25,6 +25,7 @@
   "files": [
     "main.js",
     "theme-colors.js",
+    "stereotypes-def.js",
     "menus/",
     "stylesheets/",
     "profiles/",

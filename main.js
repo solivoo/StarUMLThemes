@@ -1,11 +1,18 @@
 const path = require("path");
+const fs = require("fs");
 const {
   colors,
   stereotypeColors,
   LINE,
   FONT,
+  GRID,
   PREFIXES
 } = require("./theme-colors");
+const {
+  PROFILE_NAME,
+  STEREOTYPES,
+  METACLASSES
+} = require("./stereotypes-def");
 
 function preferenceKeyForView(view) {
   if (!view || typeof view.getClassName !== "function") {
@@ -27,9 +34,9 @@ function preferenceKeyForView(view) {
   return prefId;
 }
 
-function stereotypeNameOf(view) {
-  const model = view && view.model;
-  if (!model || model.stereotype == null) {
+function stereotypeNameOf(modelOrView) {
+  const model = modelOrView && modelOrView.model ? modelOrView.model : modelOrView;
+  if (!model || model.stereotype == null || model.stereotype === "") {
     return null;
   }
   if (typeof model.stereotype === "string") {
@@ -41,50 +48,63 @@ function stereotypeNameOf(view) {
   return null;
 }
 
-function fillForView(view) {
-  const st = stereotypeNameOf(view);
-  if (st && stereotypeColors[st]) {
+function fillForStereotypeName(st) {
+  if (!st) {
+    return null;
+  }
+  if (stereotypeColors[st]) {
     return stereotypeColors[st];
   }
-  // case-insensitive fallback
-  if (st) {
-    const key = Object.keys(stereotypeColors).find(
-      (k) => k.toLowerCase() === String(st).toLowerCase()
-    );
-    if (key) {
-      return stereotypeColors[key];
-    }
+  const key = Object.keys(stereotypeColors).find(
+    (k) => k.toLowerCase() === String(st).toLowerCase()
+  );
+  return key ? stereotypeColors[key] : null;
+}
+
+function fillForView(view) {
+  const stFill = fillForStereotypeName(stereotypeNameOf(view));
+  if (stFill) {
+    return stFill;
   }
   const prefId = preferenceKeyForView(view);
   return (prefId && colors[prefId]) || colors["view.fillColor"];
+}
+
+/** Tipografía/línea clara en toda la jerarquía (subViews + ownedViews) */
+function paintTextContrast(view, depth) {
+  if (!view || depth > 12) {
+    return;
+  }
+  if (typeof view.fontColor !== "undefined") {
+    view.fontColor = FONT;
+  }
+  if (typeof view.lineColor !== "undefined") {
+    view.lineColor = LINE;
+  }
+  if (Array.isArray(view.subViews)) {
+    view.subViews.forEach((child) => paintTextContrast(child, depth + 1));
+  }
+  if (Array.isArray(view.ownedViews)) {
+    view.ownedViews.forEach((child) => paintTextContrast(child, depth + 1));
+  }
 }
 
 function setViewStyle(view, fillColor) {
   if (!view) {
     return;
   }
-
   if (typeof fillColor === "string") {
     view.fillColor = fillColor;
   }
   view.lineColor = LINE;
   view.fontColor = FONT;
-
-  if (Array.isArray(view.ownedViews)) {
-    view.ownedViews.forEach((child) => {
-      if (child && typeof child.fillColor === "string") {
-        child.lineColor = LINE;
-        child.fontColor = FONT;
-      }
-    });
-  }
+  paintTextContrast(view, 0);
 }
 
 function applyPreferences() {
   Object.keys(colors).forEach((key) => {
     app.preferences.set(key, colors[key]);
   });
-
   try {
     app.stylesheets.setThemeCSS("dark");
   } catch (err) {
@@ -92,11 +112,57 @@ function applyPreferences() {
   }
 }
 
+/**
+ * StarUML pinta el grid en #E0E0E0 (casi blanco). Lo redirigimos a GRID oscuro.
+ */
+function installDarkGrid() {
+  const editor = app.diagrams && app.diagrams.diagramEditor;
+  if (!editor || editor.__themeDarkGridPatched) {
+    return;
+  }
+
+  const original = editor.drawBackground;
+  if (typeof original !== "function") {
+    return;
+  }
+
+  editor.drawBackground = function (g) {
+    const canvas = this.canvas;
+    let current = canvas.color;
+    Object.defineProperty(canvas, "color", {
+      configurable: true,
+      enumerable: true,
+      get: function () {
+        return current;
+      },
+      set: function (v) {
+        if (typeof v === "string" && v.toUpperCase() === "#E0E0E0") {
+          current = GRID;
+        } else {
+          current = v;
+        }
+      }
+    });
+    try {
+      return original.call(this, g);
+    } finally {
+      delete canvas.color;
+      canvas.color = current;
+    }
+  };
+
+  editor.__themeDarkGridPatched = true;
+  try {
+    app.diagrams.repaint();
+  } catch (err) {
+    /* ignore */
+  }
+}
+
 function applyToDiagram(diagram) {
   if (!diagram || !Array.isArray(diagram.ownedViews)) {
     return 0;
   }
-
   let count = 0;
   diagram.ownedViews.forEach((view) => {
     setViewStyle(view, fillForView(view));
@@ -106,6 +172,7 @@ function applyToDiagram(diagram) {
 }
 
 function applyToCurrentDiagram() {
+  installDarkGrid();
   const diagram = app.diagrams.getCurrentDiagram();
   if (!diagram) {
     app.toast.info("No hay diagrama activo");
@@ -113,59 +180,167 @@ function applyToCurrentDiagram() {
   }
   const n = applyToDiagram(diagram);
   app.diagrams.repaint();
-  app.toast.info("Tema dark aplicado a " + n + " elementos");
+  app.toast.info("Tema dark aplicado a " + n + " elementos (texto claro + grid oscuro)");
 }
 
 function applyToAllDiagrams() {
+  installDarkGrid();
   let total = 0;
-
   app.repository.getAll().forEach((elem) => {
     if (elem && typeof elem.getClassName === "function" && /Diagram$/.test(elem.getClassName())) {
       total += applyToDiagram(elem);
     }
   });
-
   app.diagrams.repaint();
   app.toast.info("Tema dark aplicado en el proyecto (" + total + " vistas)");
 }
 
+function findExistingProfile(project) {
+  if (!project || !project.ownedElements) {
+    return null;
+  }
+  return (
+    project.ownedElements.find((e) => {
+      return e && e.name === PROFILE_NAME && e.getClassName && e.getClassName() === "UMLProfile";
+    }) || null
+  );
+}
+
+function createProfileProgrammatically(project) {
+  const profile = app.factory.createModel({
+    id: "UMLProfile",
+    parent: project,
+    modelInitializer: (m) => {
+      m.name = PROFILE_NAME;
+      m.documentation =
+        "Perfil DDD + SOLID/POO (Theme Dark StarUML). Usa la lupa en stereotype para elegir.";
+    }
+  });
+
+  const metaByName = {};
+  METACLASSES.forEach((mcName) => {
+    const mc = app.factory.createModel({
+      id: "UMLMetaClass",
+      parent: profile,
+      modelInitializer: (m) => {
+        m.name = mcName;
+      }
+    });
+    metaByName[mcName] = mc;
+  });
+
+  STEREOTYPES.forEach(([name, mcName, doc]) => {
+    const st = app.factory.createModel({
+      id: "UMLStereotype",
+      parent: profile,
+      modelInitializer: (m) => {
+        m.name = name;
+        m.documentation = doc;
+      }
+    });
+
+    try {
+      const ext = new type.UMLExtension();
+      ext.name = "";
+      ext.source = st;
+      ext.target = metaByName[mcName];
+      ext._parent = st;
+      app.engine.addModel(st, "ownedElements", ext);
+    } catch (err) {
+      console.error("[Theme Dark] UMLExtension:", name, err);
+    }
+  });
+
+  return profile;
+}
+
 function applyDDDSolidProfile() {
-  const profileName = "DDDSolidProfile";
   const project = app.project.getProject();
   if (!project) {
     app.toast.error("Abre o crea un proyecto primero");
     return;
   }
 
-  const exists = project.ownedElements && project.ownedElements.find(
-    (e) => e.name === profileName && e instanceof type.UMLProfile
-  );
-  if (exists) {
-    app.toast.info(profileName + " ya está aplicado. Míralo bajo Project.");
+  const existing = findExistingProfile(project);
+  if (existing) {
+    app.toast.info(
+      PROFILE_NAME +
+        " ya está en el proyecto. Expande Project en Model Explorer y usa la lupa en stereotype."
+    );
     return;
   }
 
-  const fullPath = path.join(__dirname, "profiles", "DDDSolidProfile.mfj");
-  const ok = app.project.importFromFile(project, fullPath);
-  if (ok) {
-    app.toast.info(profileName + " aplicado. Asigna estereotipos desde Property Editor.");
-  } else {
-    app.toast.error("No se pudo importar " + profileName);
+  try {
+    const fullPath = path.join(__dirname, "profiles", "DDDSolidProfile.mfj");
+    if (fs.existsSync(fullPath)) {
+      const imported = app.project.importFromFile(project, fullPath);
+      if (imported) {
+        app.toast.info(
+          "✓ Perfil importado. Model Explorer → " +
+            PROFILE_NAME +
+            ". Luego: clase → lupa stereotype."
+        );
+        return;
+      }
+    }
+
+    createProfileProgrammatically(project);
+    app.toast.info("✓ Perfil creado. Expande Project → " + PROFILE_NAME);
+  } catch (err) {
+    console.error("[Theme Dark] apply profile:", err);
+    try {
+      createProfileProgrammatically(project);
+      app.toast.info("✓ Perfil creado (fallback). Expande Project → " + PROFILE_NAME);
+    } catch (err2) {
+      console.error(err2);
+      app.toast.error("No se pudo crear el perfil: " + (err2 && err2.message ? err2.message : err2));
+    }
+  }
+}
+
+function recolorViewsOfModels(models) {
+  if (!models || !models.length) {
+    return;
+  }
+  const diagram = app.diagrams.getCurrentDiagram();
+  if (!diagram || !diagram.ownedViews) {
+    return;
+  }
+  let changed = false;
+  diagram.ownedViews.forEach((view) => {
+    if (view.model && models.indexOf(view.model) >= 0) {
+      setViewStyle(view, fillForView(view));
+      changed = true;
+    }
+  });
+  if (changed) {
+    app.diagrams.repaint();
   }
 }
 
 function init() {
   applyPreferences();
+  installDarkGrid();
+  setTimeout(installDarkGrid, 500);
+  setTimeout(installDarkGrid, 2000);
 
   app.commands.register("theme-dark:apply-prefs", () => {
     applyPreferences();
+    installDarkGrid();
     app.diagrams.repaint();
-    app.toast.info("Preferencias dark aplicadas (nuevos elementos)");
+    app.toast.info("Preferencias dark aplicadas");
   });
-
   app.commands.register("theme-dark:apply-diagram", applyToCurrentDiagram);
   app.commands.register("theme-dark:apply-all", applyToAllDiagrams);
   app.commands.register("theme-dark:apply-profile", applyDDDSolidProfile);
+
+  app.repository.on("updated", (elems) => {
+    try {
+      recolorViewsOfModels(elems || []);
+    } catch (err) {
+      console.error("[Theme Dark] recolor:", err);
+    }
+  });
 }
 
 exports.init = init;
