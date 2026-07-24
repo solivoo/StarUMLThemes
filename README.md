@@ -1,48 +1,19 @@
 # Theme Dark StarUML
 
-Tema oscuro para **StarUML 6.3.1+**.
+Extensión para **StarUML 6.3.1+** que fuerza el **tema oscuro** de la interfaz.
 
-## Instalar en StarUML (por URL)
+## Cómo usarlo
 
-StarUML instala extensiones desde **GitHub** (no desde npm).
+1. Instala la extensión (Extension Manager → Install from URL, o copia la carpeta a `~/.config/StarUML/extensions/user/`).
+2. **Reinicia StarUML**.
+3. Comprueba el tema:
+   - **Preferences → General → UI Theme → Default Theme → Dark theme**
+   - O menú **Tools → Theme Dark StarUML → Aplicar tema oscuro**
 
-1. Sube este repo a GitHub: `https://github.com/solivo/ThemeDarkStarUML`
-2. Crea un **Release** con tag `1.0.0` (debe coincidir con `version` en `package.json`)
-3. En StarUML: **Tools → Extension Manager… → Install from URL**
-4. Pega: `https://github.com/solivo/ThemeDarkStarUML`
-5. Reinicia StarUML
+Si ya tenías el tema en **Light**, la extensión lo pasa a **Dark** al iniciar.
 
-## Probar en local (sin publicar)
+## Nota
 
-```bash
-# Linux
-ln -s "$(pwd)" ~/.config/StarUML/extensions/user/solivo.theme-dark-staruml
-```
+StarUML ya incluye temas **Dark** y **Light** de fábrica. Esta extensión no inventa otra UI desde cero: activa el dark nativo y añade pequeños ajustes CSS.
 
-Reinicia StarUML.
-
-## Publicar en npm (opcional)
-
-Útil para versionar el paquete; **StarUML no instala desde npm**.
-
-```bash
-npm login
-# usuario npm ligado a olivosergio@gmail.com
-npm publish --access public
-```
-
-## Estructura
-
-```
-ThemeDarkStarUML/
-├── main.js
-├── package.json
-├── stylesheets/
-│   └── theme-dark.css
-├── LICENSE
-└── README.md
-```
-
-## Autor
-
-Sergio Olivo — olivosergio@gmail.com
+Los colores de las **figuras del diagrama** (clases, casos de uso, etc.) se cambian con Preferences de UML o con EasyColors, no con este tema de UI.

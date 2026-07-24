@@ -1,0 +1,20 @@
+{
+  "menu": [
+    {
+      "id": "tools",
+      "submenu": [
+        {
+          "label": "Theme Dark StarUML",
+          "id": "tools.theme-dark",
+          "submenu": [
+            {
+              "label": "Aplicar tema oscuro",
+              "id": "tools.theme-dark.apply",
+              "command": "theme-dark:apply"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
