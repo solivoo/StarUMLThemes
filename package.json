@@ -1,0 +1,36 @@
+{
+  "name": "solivo.theme-dark-staruml",
+  "title": "Theme Dark StarUML",
+  "description": "Tema oscuro para StarUML 6.3.1+",
+  "homepage": "https://github.com/solivo/ThemeDarkStarUML",
+  "version": "1.0.0",
+  "keywords": [
+    "staruml",
+    "theme",
+    "dark",
+    "ui"
+  ],
+  "author": {
+    "name": "Sergio Olivo",
+    "email": "olivosergio@gmail.com",
+    "url": "https://github.com/solivo"
+  },
+  "license": "MIT",
+  "engines": {
+    "staruml": ">=6.3.1"
+  },
+  "main": "main.js",
+  "files": [
+    "main.js",
+    "stylesheets/",
+    "LICENSE",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solivo/ThemeDarkStarUML.git"
+  },
+  "bugs": {
+    "url": "https://github.com/solivo/ThemeDarkStarUML/issues"
+  }
+}
