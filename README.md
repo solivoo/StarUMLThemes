@@ -1,19 +1,31 @@
 # Theme Dark StarUML
 
-Extensión para **StarUML 6.3.1+** que fuerza el **tema oscuro** de la interfaz.
+Tema **total dark** + perfil **DDD/SOLID/POO** para StarUML 6.3.1+.
 
-## Cómo usarlo
+## Flujo recomendado
 
-1. Instala la extensión (Extension Manager → Install from URL, o copia la carpeta a `~/.config/StarUML/extensions/user/`).
-2. **Reinicia StarUML**.
-3. Comprueba el tema:
-   - **Preferences → General → UI Theme → Default Theme → Dark theme**
-   - O menú **Tools → Theme Dark StarUML → Aplicar tema oscuro**
+1. Reinicia StarUML.
+2. **Tools → Theme Dark StarUML → Aplicar perfil DDD/SOLID**  
+   Aparece `DDDSolidProfile` bajo el Project.
+3. En una clase/paquete/interfaz: Property Editor → `stereotype` → elige uno del perfil.
+4. **Tools → Theme Dark StarUML → Recolorear diagrama actual**  
+   Pinta cada figura según su estereotipo.
 
-Si ya tenías el tema en **Light**, la extensión lo pasa a **Dark** al iniciar.
+## Estereotipos incluidos (44)
 
-## Nota
+### DDD
+`AggregateRoot`, `Entity`, `ValueObject`, `DomainEvent`, `DomainService`, `ApplicationService`, `Repository`, `Factory`, `Specification`, `BoundedContext`, `Domain`, `Application`, `Infrastructure`, `Presentation`, `UseCase`, `Command`, `Query`, `Handler`, `DTO`, `Port`, `Adapter`, `AntiCorruptionLayer`, `Policy`, `Saga`, `Module`, `SharedKernel`
 
-StarUML ya incluye temas **Dark** y **Light** de fábrica. Esta extensión no inventa otra UI desde cero: activa el dark nativo y añade pequeños ajustes CSS.
+### SOLID / POO / patrones
+`Service`, `Controller`, `Presenter`, `Gateway`, `Mapper`, `Validator`, `Abstract`, `Concrete`, `Facade`, `Strategy`, `Observer`, `Builder`, `Singleton`, `SRP`, `OCP`, `LSP`, `ISP`, `DIP`
 
-Los colores de las **figuras del diagrama** (clases, casos de uso, etc.) se cambian con Preferences de UML o con EasyColors, no con este tema de UI.
+Cada uno tiene documentación en el propio estereotipo y un color dark distinto.
+
+## Menú
+
+| Comando | Efecto |
+|---------|--------|
+| Aplicar perfil DDD/SOLID | Importa el perfil al proyecto |
+| Aplicar preferencias dark | UI + canvas oscuro |
+| Recolorear diagrama actual | Color por estereotipo (o por tipo UML) |
+| Recolorear TODOS | Igual en todo el proyecto |

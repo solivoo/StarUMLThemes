@@ -1,15 +1,86 @@
-/* Ajustes visuales opcionales encima del tema dark nativo de StarUML */
+/* Refuerzo UI total-dark sobre el tema nativo de StarUML */
 
-/* Barra de estado un poco más marcada */
-#status-bar,
-.statusbar {
-  border-top: 1px solid #3c3c3c !important;
+html,
+body,
+.main-view,
+#working-set-list-container,
+.content-wrapper {
+  background-color: #1e1e1e !important;
+  color: #d4d4d4 !important;
 }
 
-/* Selección del árbol con contraste mayor */
+/* Área de trabajo alrededor del canvas */
+#editor-holder,
+.editor-holder,
+.working-area,
+#diagram-editor,
+.diagram-editor {
+  background-color: #141414 !important;
+}
+
+#diagram-canvas {
+  background-color: #141414 !important;
+}
+
+/* Paneles laterales */
+.sidebar,
+.panel,
+.panel-heading,
+.nav-tabs {
+  background-color: #181818 !important;
+  border-color: #333 !important;
+  color: #d4d4d4 !important;
+}
+
+.nav-tabs > li.active > a {
+  background-color: #252526 !important;
+  color: #ffffff !important;
+  border-color: #333 !important;
+}
+
+/* Inputs */
+input,
+textarea,
+select,
+.form-control,
+.k-input,
+.k-textbox {
+  background-color: #2d2d2d !important;
+  color: #eaeaea !important;
+  border-color: #3c3c3c !important;
+}
+
+/* Menús */
+.dropdown-menu,
+.k-context-menu,
+.k-menu {
+  background-color: #252526 !important;
+  color: #d4d4d4 !important;
+  border-color: #3c3c3c !important;
+}
+
+.dropdown-menu > li > a:hover,
+.k-state-hover {
+  background-color: #094771 !important;
+  color: #ffffff !important;
+}
+
+/* Selección árbol */
 .k-state-selected,
 .jstree-clicked,
 .jstree-wholerow-clicked {
   background-color: #0e639c !important;
   color: #ffffff !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 5px;
 }

@@ -1,0 +1,1377 @@
+{
+	"_type": "UMLProfile",
+	"_id": "AAAAAAHBsef8o604QD=",
+	"_parent": {
+		"$ref": "AAAAAAdVXzUgPugiuH="
+	},
+	"name": "DDDSolidProfile",
+	"documentation": "Perfil DDD + SOLID/POO para StarUML (Theme Dark StarUML). Aplica desde Tools → Theme Dark StarUML → Aplicar perfil DDD/SOLID.",
+	"visibility": "public",
+	"ownedElements": [
+		{
+			"_type": "UMLMetaClass",
+			"_id": "AAAAAArGjE2xj3iKU6=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "UMLClass",
+			"visibility": "public"
+		},
+		{
+			"_type": "UMLMetaClass",
+			"_id": "AAAAAARHCSRRHHIOak=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "UMLInterface",
+			"visibility": "public"
+		},
+		{
+			"_type": "UMLMetaClass",
+			"_id": "AAAAAAWVc5VkNJZcG5=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "UMLPackage",
+			"visibility": "public"
+		},
+		{
+			"_type": "UMLMetaClass",
+			"_id": "AAAAAAADbwJMDFZ5KB=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "UMLComponent",
+			"visibility": "public"
+		},
+		{
+			"_type": "UMLMetaClass",
+			"_id": "AAAAAAcKfxrboHHG2i=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "UMLArtifact",
+			"visibility": "public"
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAANRePALO8xTeq=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "AggregateRoot",
+			"documentation": "Raíz de agregado DDD. Frontera de consistencia transaccional.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAdRximTbvJGQl=",
+					"_parent": {
+						"$ref": "AAAAAANRePALO8xTeq="
+					},
+					"source": {
+						"$ref": "AAAAAANRePALO8xTeq="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAA8JwP3wKMLAUv=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Entity",
+			"documentation": "Entidad de dominio con identidad única.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAeUsE7FK8io6A=",
+					"_parent": {
+						"$ref": "AAAAAA8JwP3wKMLAUv="
+					},
+					"source": {
+						"$ref": "AAAAAA8JwP3wKMLAUv="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAl2YB8bCKq2cX=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "ValueObject",
+			"documentation": "Objeto de valor inmutable, igualdad por atributos.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAdOUHHQ7EcWoa=",
+					"_parent": {
+						"$ref": "AAAAAAl2YB8bCKq2cX="
+					},
+					"source": {
+						"$ref": "AAAAAAl2YB8bCKq2cX="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAASPfKazxYlnDe=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "DomainEvent",
+			"documentation": "Evento de dominio que ocurrió en el pasado.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAcB7twXKVofA0=",
+					"_parent": {
+						"$ref": "AAAAAASPfKazxYlnDe="
+					},
+					"source": {
+						"$ref": "AAAAAASPfKazxYlnDe="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAACoFxAXy2u196=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "DomainService",
+			"documentation": "Servicio de dominio sin estado propio de entidad.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAA1ChjH8SdSSBM=",
+					"_parent": {
+						"$ref": "AAAAAACoFxAXy2u196="
+					},
+					"source": {
+						"$ref": "AAAAAACoFxAXy2u196="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAIYqYw7Bjuxsq=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "ApplicationService",
+			"documentation": "Orquesta casos de uso de la capa de aplicación.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAoQnsGvMEBYh3=",
+					"_parent": {
+						"$ref": "AAAAAAIYqYw7Bjuxsq="
+					},
+					"source": {
+						"$ref": "AAAAAAIYqYw7Bjuxsq="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAt7OwAbS6YKXc=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Repository",
+			"documentation": "Puerto de persistencia del agregado.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAV6CyAcBJTclX=",
+					"_parent": {
+						"$ref": "AAAAAAt7OwAbS6YKXc="
+					},
+					"source": {
+						"$ref": "AAAAAAt7OwAbS6YKXc="
+					},
+					"target": {
+						"$ref": "AAAAAARHCSRRHHIOak="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAbBhZ2HowK6zb=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Factory",
+			"documentation": "Fábrica de creación de agregados/entidades.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAyS4v7rXVBpsG=",
+					"_parent": {
+						"$ref": "AAAAAAbBhZ2HowK6zb="
+					},
+					"source": {
+						"$ref": "AAAAAAbBhZ2HowK6zb="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAO5Frc5aDwbCZ=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Specification",
+			"documentation": "Regla de negocio evaluable (patrón Specification).",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAda5aQmqfPTiV=",
+					"_parent": {
+						"$ref": "AAAAAAO5Frc5aDwbCZ="
+					},
+					"source": {
+						"$ref": "AAAAAAO5Frc5aDwbCZ="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAAG5wPZOtVHFc=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "BoundedContext",
+			"documentation": "Contexto delimitado DDD.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAA7HvFVBA08535=",
+					"_parent": {
+						"$ref": "AAAAAAAG5wPZOtVHFc="
+					},
+					"source": {
+						"$ref": "AAAAAAAG5wPZOtVHFc="
+					},
+					"target": {
+						"$ref": "AAAAAAWVc5VkNJZcG5="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAALZTL8f0oqLRr=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Domain",
+			"documentation": "Capa / paquete de dominio.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAEk7gJs5t0TJQ=",
+					"_parent": {
+						"$ref": "AAAAAALZTL8f0oqLRr="
+					},
+					"source": {
+						"$ref": "AAAAAALZTL8f0oqLRr="
+					},
+					"target": {
+						"$ref": "AAAAAAWVc5VkNJZcG5="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAmun9AAoZEzBt=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Application",
+			"documentation": "Capa de aplicación / casos de uso.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAzs96gloWhx6l=",
+					"_parent": {
+						"$ref": "AAAAAAmun9AAoZEzBt="
+					},
+					"source": {
+						"$ref": "AAAAAAmun9AAoZEzBt="
+					},
+					"target": {
+						"$ref": "AAAAAAWVc5VkNJZcG5="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAYK5LuJsTAweT=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Infrastructure",
+			"documentation": "Capa de infraestructura (DB, mensajería, APIs).",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAgI24BSFRQPLp=",
+					"_parent": {
+						"$ref": "AAAAAAYK5LuJsTAweT="
+					},
+					"source": {
+						"$ref": "AAAAAAYK5LuJsTAweT="
+					},
+					"target": {
+						"$ref": "AAAAAAWVc5VkNJZcG5="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAqmkULyCA5XEI=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Presentation",
+			"documentation": "Capa de presentación / UI / API controllers.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAmsp7BgdaGdWy=",
+					"_parent": {
+						"$ref": "AAAAAAqmkULyCA5XEI="
+					},
+					"source": {
+						"$ref": "AAAAAAqmkULyCA5XEI="
+					},
+					"target": {
+						"$ref": "AAAAAAWVc5VkNJZcG5="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAQytcFO5ZAEt8=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "UseCase",
+			"documentation": "Caso de uso (aplicación) — un flujo de negocio.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAANXYlANuBLgVM=",
+					"_parent": {
+						"$ref": "AAAAAAQytcFO5ZAEt8="
+					},
+					"source": {
+						"$ref": "AAAAAAQytcFO5ZAEt8="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAywXkkwOBrTXy=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Command",
+			"documentation": "Comando CQRS (intención de cambio).",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAA4smwNxTBDUQL=",
+					"_parent": {
+						"$ref": "AAAAAAywXkkwOBrTXy="
+					},
+					"source": {
+						"$ref": "AAAAAAywXkkwOBrTXy="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAKMEtmezO8evd=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Query",
+			"documentation": "Consulta CQRS (lectura).",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAkVVaK1kLI2xr=",
+					"_parent": {
+						"$ref": "AAAAAAKMEtmezO8evd="
+					},
+					"source": {
+						"$ref": "AAAAAAKMEtmezO8evd="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAUuuiW6cMitxq=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Handler",
+			"documentation": "Handler de Command/Query/Event.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAA4XBSetBWLBwb=",
+					"_parent": {
+						"$ref": "AAAAAAUuuiW6cMitxq="
+					},
+					"source": {
+						"$ref": "AAAAAAUuuiW6cMitxq="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAActrTIWjAQHvf=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "DTO",
+			"documentation": "Data Transfer Object entre capas.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAFTsocHJaHILO=",
+					"_parent": {
+						"$ref": "AAAAAActrTIWjAQHvf="
+					},
+					"source": {
+						"$ref": "AAAAAActrTIWjAQHvf="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAWllPkeAVmcHb=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Port",
+			"documentation": "Puerto hexagonal (entrada/salida).",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAA2AaLcviE1DFV=",
+					"_parent": {
+						"$ref": "AAAAAAWllPkeAVmcHb="
+					},
+					"source": {
+						"$ref": "AAAAAAWllPkeAVmcHb="
+					},
+					"target": {
+						"$ref": "AAAAAARHCSRRHHIOak="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAwQmcd8GfzeA4=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Adapter",
+			"documentation": "Adaptador hexagonal que implementa un Port.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAGPx3AabB3Yqq=",
+					"_parent": {
+						"$ref": "AAAAAAwQmcd8GfzeA4="
+					},
+					"source": {
+						"$ref": "AAAAAAwQmcd8GfzeA4="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAhsQACOYmDisI=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "AntiCorruptionLayer",
+			"documentation": "ACL entre bounded contexts o sistemas legacy.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAxMvN7VPVDj6w=",
+					"_parent": {
+						"$ref": "AAAAAAhsQACOYmDisI="
+					},
+					"source": {
+						"$ref": "AAAAAAhsQACOYmDisI="
+					},
+					"target": {
+						"$ref": "AAAAAAWVc5VkNJZcG5="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAPYzg0TlumRtw=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Policy",
+			"documentation": "Política de dominio / proceso.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAfvW3HDiqbgqj=",
+					"_parent": {
+						"$ref": "AAAAAAPYzg0TlumRtw="
+					},
+					"source": {
+						"$ref": "AAAAAAPYzg0TlumRtw="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAefgLTySgqVJz=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Saga",
+			"documentation": "Orquestación/coordinación de procesos largos.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAbMGnvnd3CRWZ=",
+					"_parent": {
+						"$ref": "AAAAAAefgLTySgqVJz="
+					},
+					"source": {
+						"$ref": "AAAAAAefgLTySgqVJz="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAgBp1cVkjlhBR=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Service",
+			"documentation": "Servicio de aplicación o de infraestructura.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAwkRUHW1gwkei=",
+					"_parent": {
+						"$ref": "AAAAAAgBp1cVkjlhBR="
+					},
+					"source": {
+						"$ref": "AAAAAAgBp1cVkjlhBR="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAWzjTWK5BeB5G=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Controller",
+			"documentation": "Controlador (entrada HTTP/UI) — Presentation.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAh4rtoaqkCksV=",
+					"_parent": {
+						"$ref": "AAAAAAWzjTWK5BeB5G="
+					},
+					"source": {
+						"$ref": "AAAAAAWzjTWK5BeB5G="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAPEEQaF3TkDeH=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Presenter",
+			"documentation": "Presenter (UI) — separa vista de lógica.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAcAEmB6rndjW4=",
+					"_parent": {
+						"$ref": "AAAAAAPEEQaF3TkDeH="
+					},
+					"source": {
+						"$ref": "AAAAAAPEEQaF3TkDeH="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAArMQHBIvH9E6f=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Gateway",
+			"documentation": "Gateway hacia sistema externo.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAYA4a0hBpe7Ly=",
+					"_parent": {
+						"$ref": "AAAAAArMQHBIvH9E6f="
+					},
+					"source": {
+						"$ref": "AAAAAArMQHBIvH9E6f="
+					},
+					"target": {
+						"$ref": "AAAAAARHCSRRHHIOak="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAAsC02NAi1aJ1=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Mapper",
+			"documentation": "Mapeo Domain <-> DTO / persistencia.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAQhtd0bSjIqrM=",
+					"_parent": {
+						"$ref": "AAAAAAAsC02NAi1aJ1="
+					},
+					"source": {
+						"$ref": "AAAAAAAsC02NAi1aJ1="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAqRucETruQykC=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Validator",
+			"documentation": "Validación de entrada o reglas.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAACHwBStapuivk=",
+					"_parent": {
+						"$ref": "AAAAAAqRucETruQykC="
+					},
+					"source": {
+						"$ref": "AAAAAAqRucETruQykC="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAXtbcLB9Vu5rs=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Abstract",
+			"documentation": "Tipo abstracto / base (OCP, herencia controlada).",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAdwpDvzYKNBvA=",
+					"_parent": {
+						"$ref": "AAAAAAXtbcLB9Vu5rs="
+					},
+					"source": {
+						"$ref": "AAAAAAXtbcLB9Vu5rs="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAEVkmbH18bXb2=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Concrete",
+			"documentation": "Implementación concreta.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAce9BjsVnr1x9=",
+					"_parent": {
+						"$ref": "AAAAAAEVkmbH18bXb2="
+					},
+					"source": {
+						"$ref": "AAAAAAEVkmbH18bXb2="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAThA7SOyR7Au5=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Facade",
+			"documentation": "Fachada — API simple sobre un subsistema.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAACuNWBWrGZxp5=",
+					"_parent": {
+						"$ref": "AAAAAAThA7SOyR7Au5="
+					},
+					"source": {
+						"$ref": "AAAAAAThA7SOyR7Au5="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAuIsWey3p3Yut=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Strategy",
+			"documentation": "Estrategia intercambiable (OCP / DIP).",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAl9PEvFASEIZ4=",
+					"_parent": {
+						"$ref": "AAAAAAuIsWey3p3Yut="
+					},
+					"source": {
+						"$ref": "AAAAAAuIsWey3p3Yut="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAnQhuDnTuYVRX=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Observer",
+			"documentation": "Observador de eventos/cambios.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAA5WVkNTyiUFe4=",
+					"_parent": {
+						"$ref": "AAAAAAnQhuDnTuYVRX="
+					},
+					"source": {
+						"$ref": "AAAAAAnQhuDnTuYVRX="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAA0WYJbRprPB60=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Builder",
+			"documentation": "Constructor fluido de objetos complejos.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAu3qfuLm4BvqQ=",
+					"_parent": {
+						"$ref": "AAAAAA0WYJbRprPB60="
+					},
+					"source": {
+						"$ref": "AAAAAA0WYJbRprPB60="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAPtZqgoDyy1IQ=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Singleton",
+			"documentation": "Instancia única (usar con cuidado).",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAABJAI3e8MzmxJ=",
+					"_parent": {
+						"$ref": "AAAAAAPtZqgoDyy1IQ="
+					},
+					"source": {
+						"$ref": "AAAAAAPtZqgoDyy1IQ="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAQyqAeDxYRE0l=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "Module",
+			"documentation": "Módulo cohesivo dentro de un contexto.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAGg6dTuIphMlU=",
+					"_parent": {
+						"$ref": "AAAAAAQyqAeDxYRE0l="
+					},
+					"source": {
+						"$ref": "AAAAAAQyqAeDxYRE0l="
+					},
+					"target": {
+						"$ref": "AAAAAAWVc5VkNJZcG5="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAARnSQqw9Rl4t7=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "SharedKernel",
+			"documentation": "Kernel compartido entre contextos.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAA5DsR3RLkJVB6=",
+					"_parent": {
+						"$ref": "AAAAAARnSQqw9Rl4t7="
+					},
+					"source": {
+						"$ref": "AAAAAARnSQqw9Rl4t7="
+					},
+					"target": {
+						"$ref": "AAAAAAWVc5VkNJZcG5="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAwIu9TQxdtUCz=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "SRP",
+			"documentation": "Marca Single Responsibility Principle.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAEBMoZOy3QgB2=",
+					"_parent": {
+						"$ref": "AAAAAAwIu9TQxdtUCz="
+					},
+					"source": {
+						"$ref": "AAAAAAwIu9TQxdtUCz="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAFMQ8zvXEGziI=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "OCP",
+			"documentation": "Marca Open/Closed Principle.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAJyEiIZpyA7OP=",
+					"_parent": {
+						"$ref": "AAAAAAFMQ8zvXEGziI="
+					},
+					"source": {
+						"$ref": "AAAAAAFMQ8zvXEGziI="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAA4xQ976BQwctj=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "LSP",
+			"documentation": "Marca Liskov Substitution Principle.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAADK5fo4BWVypW=",
+					"_parent": {
+						"$ref": "AAAAAA4xQ976BQwctj="
+					},
+					"source": {
+						"$ref": "AAAAAA4xQ976BQwctj="
+					},
+					"target": {
+						"$ref": "AAAAAArGjE2xj3iKU6="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAALlIjvzU9nTcS=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "ISP",
+			"documentation": "Marca Interface Segregation Principle.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAxb0byRNqS0J4=",
+					"_parent": {
+						"$ref": "AAAAAALlIjvzU9nTcS="
+					},
+					"source": {
+						"$ref": "AAAAAALlIjvzU9nTcS="
+					},
+					"target": {
+						"$ref": "AAAAAARHCSRRHHIOak="
+					},
+					"visibility": "public"
+				}
+			]
+		},
+		{
+			"_type": "UMLStereotype",
+			"_id": "AAAAAAsVAcgjYqNQMP=",
+			"_parent": {
+				"$ref": "AAAAAAHBsef8o604QD="
+			},
+			"name": "DIP",
+			"documentation": "Marca Dependency Inversion Principle.",
+			"visibility": "public",
+			"isAbstract": false,
+			"isFinalSpecialization": false,
+			"isLeaf": false,
+			"isActive": false,
+			"ownedElements": [
+				{
+					"_type": "UMLExtension",
+					"_id": "AAAAAAiAX8tq8mnuAp=",
+					"_parent": {
+						"$ref": "AAAAAAsVAcgjYqNQMP="
+					},
+					"source": {
+						"$ref": "AAAAAAsVAcgjYqNQMP="
+					},
+					"target": {
+						"$ref": "AAAAAARHCSRRHHIOak="
+					},
+					"visibility": "public"
+				}
+			]
+		}
+	]
+}

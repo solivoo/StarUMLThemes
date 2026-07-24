@@ -8,9 +8,25 @@
           "id": "tools.theme-dark",
           "submenu": [
             {
-              "label": "Aplicar tema oscuro",
-              "id": "tools.theme-dark.apply",
-              "command": "theme-dark:apply"
+              "label": "Aplicar perfil DDD/SOLID (estereotipos)",
+              "id": "tools.theme-dark.apply-profile",
+              "command": "theme-dark:apply-profile"
+            },
+            { "type": "separator" },
+            {
+              "label": "Aplicar preferencias dark (UI + canvas)",
+              "id": "tools.theme-dark.apply-prefs",
+              "command": "theme-dark:apply-prefs"
+            },
+            {
+              "label": "Recolorear diagrama actual (por estereotipo)",
+              "id": "tools.theme-dark.apply-diagram",
+              "command": "theme-dark:apply-diagram"
+            },
+            {
+              "label": "Recolorear TODOS los diagramas",
+              "id": "tools.theme-dark.apply-all",
+              "command": "theme-dark:apply-all"
             }
           ]
         }

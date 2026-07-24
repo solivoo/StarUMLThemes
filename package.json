@@ -1,14 +1,16 @@
 {
   "name": "solivo.theme-dark-staruml",
   "title": "Theme Dark StarUML",
-  "description": "Tema oscuro para StarUML 6.3.1+",
+  "description": "Tema total dark + perfil DDD/SOLID/POO para StarUML 6.3.1+",
   "homepage": "https://github.com/solivo/ThemeDarkStarUML",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "keywords": [
     "staruml",
     "theme",
     "dark",
-    "ui"
+    "ui",
+    "stereotypes",
+    "canvas"
   ],
   "author": {
     "name": "Sergio Olivo",
@@ -22,7 +24,10 @@
   "main": "main.js",
   "files": [
     "main.js",
+    "theme-colors.js",
+    "menus/",
     "stylesheets/",
+    "profiles/",
     "LICENSE",
     "README.md"
   ],
