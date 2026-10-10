@@ -102,6 +102,45 @@ select,
   color: #eaeaea !important;
 }
 
+/* StarUML deja el quick-edit (public/protected/private/package) en negro.
+   El fondo del menú ya es oscuro, así que el glifo del icon-font hay que aclararlo. */
+.quick-edit ul.quick-edit-dropdown > li.k-item > .k-link,
+.quick-edit ul.quick-edit-dropdown .k-sprite.staruml-icon,
+.quick-edit ul.quick-edit-dropdown .k-sprite.staruml-icon:before {
+  color: #eaeaea !important;
+  -webkit-text-fill-color: #eaeaea !important;
+}
+
+.quick-edit ul.quick-edit-dropdown .k-sprite.staruml-icon {
+  font-size: 16px !important;
+  line-height: 1 !important;
+  text-indent: 0 !important;
+  overflow: visible !important;
+}
+
+.quick-edit ul.quick-edit-dropdown > li.k-item:hover,
+.quick-edit ul.quick-edit-dropdown > li.k-item.k-state-hover,
+.quick-edit ul.quick-edit-dropdown > li.k-item.k-state-selected,
+.quick-edit ul.quick-edit-dropdown > li.k-item:active {
+  background-color: #0e639c !important;
+}
+
+.quick-edit ul.quick-edit-dropdown > li.k-item:hover > .k-link,
+.quick-edit ul.quick-edit-dropdown > li.k-item.k-state-hover > .k-link,
+.quick-edit ul.quick-edit-dropdown > li.k-item.k-state-selected > .k-link,
+.quick-edit ul.quick-edit-dropdown > li.k-item:active > .k-link,
+.quick-edit ul.quick-edit-dropdown > li.k-item:hover .staruml-icon,
+.quick-edit ul.quick-edit-dropdown > li.k-item.k-state-hover .staruml-icon,
+.quick-edit ul.quick-edit-dropdown > li.k-item.k-state-selected .staruml-icon,
+.quick-edit ul.quick-edit-dropdown > li.k-item:active .staruml-icon,
+.quick-edit ul.quick-edit-dropdown > li.k-item:hover .staruml-icon:before,
+.quick-edit ul.quick-edit-dropdown > li.k-item.k-state-hover .staruml-icon:before,
+.quick-edit ul.quick-edit-dropdown > li.k-item.k-state-selected .staruml-icon:before,
+.quick-edit ul.quick-edit-dropdown > li.k-item:active .staruml-icon:before {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
