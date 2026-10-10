@@ -1,86 +1,117 @@
-/* Refuerzo UI total-dark sobre el tema nativo de StarUML */
+/* Total dark sobre el tema nativo de StarUML 7.
+   Selectores del layout real: titlebar, sidebar, content, diagram-area, toolbar, navigator. */
 
 html,
 body,
-.main-view,
-#working-set-list-container,
-.content-wrapper {
+.titlebar,
+.statusbar,
+.main-view {
   background-color: #1e1e1e !important;
   color: #d4d4d4 !important;
 }
 
-/* Área de trabajo alrededor del canvas */
-#editor-holder,
-.editor-holder,
-.working-area,
-#diagram-editor,
-.diagram-editor {
-  background-color: #141414 !important;
-}
-
-#diagram-canvas {
-  background-color: #141414 !important;
-}
-
-/* Paneles laterales */
-.sidebar,
-.panel,
-.panel-heading,
-.nav-tabs {
-  background-color: #181818 !important;
-  border-color: #333 !important;
+.titlebar .title,
+.statusbar,
+.statusbar .active-element-name,
+.statusbar .active-element-class {
   color: #d4d4d4 !important;
 }
 
-.nav-tabs > li.active > a {
-  background-color: #252526 !important;
-  color: #ffffff !important;
-  border-color: #333 !important;
+.main-view .sidebar,
+.main-view .content,
+.main-view .content .content-holder,
+.main-view .navigator,
+#working-diagrams,
+#toolbox,
+#model-explorer,
+#editors,
+#toolbar {
+  background-color: #181818 !important;
+  color: #d4d4d4 !important;
+  border-color: #333333 !important;
 }
 
-/* Inputs */
+#diagram-area {
+  background-color: #121212 !important;
+  background-image: none !important;
+}
+
+#diagram-canvas {
+  background-color: #121212 !important;
+}
+
+.view-holder,
+.view-header,
+.view-content,
+.bottom-panel,
+.bottom-panel .toolbar,
+.panel,
+.panel-heading {
+  background-color: #181818 !important;
+  color: #d4d4d4 !important;
+  border-color: #333333 !important;
+}
+
+.view-header .view-header-title,
+.bottom-panel .toolbar .title {
+  color: #b6b6b6 !important;
+}
+
+.nav-tabs > li.active > a,
+.k-state-selected,
+.k-treeview .k-in.k-state-selected,
+.k-treeview .k-state-selected {
+  background-color: #0e639c !important;
+  color: #ffffff !important;
+  border-color: #333333 !important;
+}
+
+.k-state-hover,
+.k-treeview .k-in.k-state-hover,
+.dropdown-menu > li > a:hover {
+  background-color: #094771 !important;
+  color: #ffffff !important;
+}
+
 input,
 textarea,
 select,
 .form-control,
 .k-input,
-.k-textbox {
+.k-textbox,
+.k-dropdown-wrap,
+.CodeMirror {
   background-color: #2d2d2d !important;
   color: #eaeaea !important;
   border-color: #3c3c3c !important;
 }
 
-/* Menús */
 .dropdown-menu,
 .k-context-menu,
-.k-menu {
+.k-menu,
+.k-window,
+.k-window-titlebar,
+.k-window-content,
+.dialog {
   background-color: #252526 !important;
   color: #d4d4d4 !important;
   border-color: #3c3c3c !important;
 }
 
-.dropdown-menu > li > a:hover,
-.k-state-hover {
-  background-color: #094771 !important;
-  color: #ffffff !important;
-}
-
-/* Selección árbol */
-.k-state-selected,
-.jstree-clicked,
-.jstree-wholerow-clicked {
-  background-color: #0e639c !important;
-  color: #ffffff !important;
+.k-window-titlebar .k-window-title {
+  color: #eaeaea !important;
 }
 
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
+
 ::-webkit-scrollbar-track {
   background: #1e1e1e;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #555;
+  background: #555555;
   border-radius: 5px;
 }

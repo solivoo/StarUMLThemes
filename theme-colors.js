@@ -6,12 +6,13 @@ const LINE = "#d8d8d8";
 const FONT = "#ffffff";
 const CANVAS = "#121212";
 const DEFAULT_FILL = "#2a2a2e";
-/** Color del grid del canvas (StarUML lo hardcodea en #E0E0E0; lo parcheamos) */
+/** Color del grid. En StarUML 7 se aplica con diagramEditor.gridColor. */
 const GRID = "#2a2a2a";
 
 const base = {
   "theme.default": "dark",
   "diagramEditor.backgroundColor": CANVAS,
+  "diagramEditor.gridColor": GRID,
   "view.fillColor": DEFAULT_FILL,
   "view.lineColor": LINE,
   "view.fontColor": FONT,

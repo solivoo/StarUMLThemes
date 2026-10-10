@@ -1,6 +1,6 @@
 # Theme Dark StarUML
 
-Tema **total dark** + perfil **DDD/SOLID/POO** para StarUML 6.3.1+.
+Tema **total dark** para StarUML 7. El perfil DDD/SOLID/POO sigue incluido.
 
 ## Flujo recomendado
 

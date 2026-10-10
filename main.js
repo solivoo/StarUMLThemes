@@ -5,7 +5,6 @@ const {
   stereotypeColors,
   LINE,
   FONT,
-  GRID,
   PREFIXES
 } = require("./theme-colors");
 const {
@@ -110,52 +109,10 @@ function applyPreferences() {
   } catch (err) {
     console.error("[Theme Dark] setThemeCSS:", err);
   }
-}
-
-/**
- * StarUML pinta el grid en #E0E0E0 (casi blanco). Lo redirigimos a GRID oscuro.
- */
-function installDarkGrid() {
-  const editor = app.diagrams && app.diagrams.diagramEditor;
-  if (!editor || editor.__themeDarkGridPatched) {
-    return;
-  }
-
-  const original = editor.drawBackground;
-  if (typeof original !== "function") {
-    return;
-  }
-
-  editor.drawBackground = function (g) {
-    const canvas = this.canvas;
-    let current = canvas.color;
-    Object.defineProperty(canvas, "color", {
-      configurable: true,
-      enumerable: true,
-      get: function () {
-        return current;
-      },
-      set: function (v) {
-        if (typeof v === "string" && v.toUpperCase() === "#E0E0E0") {
-          current = GRID;
-        } else {
-          current = v;
-        }
-      }
-    });
-    try {
-      return original.call(this, g);
-    } finally {
-      delete canvas.color;
-      canvas.color = current;
-    }
-  };
-
-  editor.__themeDarkGridPatched = true;
   try {
     app.diagrams.repaint();
   } catch (err) {
-    /* ignore */
+    /* el editor aún no está listo al arrancar */
   }
 }
 
@@ -172,7 +129,6 @@ function applyToDiagram(diagram) {
 }
 
 function applyToCurrentDiagram() {
-  installDarkGrid();
   const diagram = app.diagrams.getCurrentDiagram();
   if (!diagram) {
     app.toast.info("No hay diagrama activo");
@@ -184,7 +140,6 @@ function applyToCurrentDiagram() {
 }
 
 function applyToAllDiagrams() {
-  installDarkGrid();
   let total = 0;
   app.repository.getAll().forEach((elem) => {
     if (elem && typeof elem.getClassName === "function" && /Diagram$/.test(elem.getClassName())) {
@@ -320,14 +275,9 @@ function recolorViewsOfModels(models) {
 
 function init() {
   applyPreferences();
-  installDarkGrid();
-  setTimeout(installDarkGrid, 500);
-  setTimeout(installDarkGrid, 2000);
 
   app.commands.register("theme-dark:apply-prefs", () => {
     applyPreferences();
-    installDarkGrid();
-    app.diagrams.repaint();
     app.toast.info("Preferencias dark aplicadas");
   });
   app.commands.register("theme-dark:apply-diagram", applyToCurrentDiagram);

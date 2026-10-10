@@ -1,9 +1,9 @@
 {
   "name": "solivo.theme-dark-staruml",
   "title": "Theme Dark StarUML",
-  "description": "Tema total dark + perfil DDD/SOLID/POO para StarUML 6.3.1+",
+  "description": "Tema total dark para StarUML 7",
   "homepage": "https://github.com/solivo/ThemeDarkStarUML",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "keywords": [
     "staruml",
     "theme",
@@ -19,7 +19,7 @@
   },
   "license": "MIT",
   "engines": {
-    "staruml": ">=6.3.1"
+    "staruml": ">=7.0.0"
   },
   "main": "main.js",
   "files": [
